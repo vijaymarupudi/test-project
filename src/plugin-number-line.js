@@ -1,4 +1,4 @@
-var _globalName_ = (function (jspsych) {
+var jsPsychNumberLine = (function (jspsych) {
   "use strict";
 
   const info = {
@@ -90,7 +90,7 @@ var _globalName_ = (function (jspsych) {
    * @see {@link {documentation-url}}
    */
 
-  import { Interactive, getScriptName } from './index.js';
+  //import { Interactive, getScriptName } from './index.js';
   let interactive = new Interactive(getScriptName());
   interactive.border = true;
   interactive.width = 1000;
@@ -357,7 +357,9 @@ var _globalName_ = (function (jspsych) {
 }
 
     trial(display_element, trial) {
-      
+      display_element.innerHTML = 
+      '<div id="jsPsychNumberLine" class="jsPsychNumberLine">'
+      "</div>";
       // data saving
       var trial_data = {
         data1: 99, // Make sure this type and name matches the information for data1 in the data object contained within the info const.

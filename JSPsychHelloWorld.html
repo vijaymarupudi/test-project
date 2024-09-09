@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title>My experiment</title>
-    <script src="https://unpkg.com/jspsych@7.3.4"></script>
+    <meta charset="utf-8">
+    <title>Number Line Estimation Task</title>
+    <!-- <script src="https://unpkg.com/jspsych@7.3.4"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
-    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" />
-    <!-- <script src="jspsych/jspsych.js"></script>
-    <script src="jspsych/plugin-html-keyboard-response.js"></script> -->
-    <!-- <script type="module" src="jspsych/plugin-number-line.js"></script>
-    <script type="module" src="JSPscyhHelloWorld.js"></script> -->
-    <!-- <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" /> -->
+    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" /> -->
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script> 
+    <script type="module" src="/src/plugin-number-line.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
   </head>
-  <body></body>
+  <body>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="/main.js" ></script> 
+    <script type="module" src="./dep/dist/examples/math/line-defined-by-two-points.js"></script>
+
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./dep/css/library.css">
+    <link rel="stylesheet" href="/main.cs" />
+
+    <!-- SVG -->
+    <div id="jsPsychNumberLine"></div>
+
+    <!-- MATH DIVS -->
+    <div id="line-defined-by-two-points"></div>
+  </body>
   <script>
     // https://docs.npmjs.com/creating-a-package-json-file json package info
     var jsPsych = initJsPsych();
@@ -19,7 +36,7 @@
 
     var welcome = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: "Welcome to the cool alissa experiment, press any button to begin"
+      stimulus: "Welcome to the Number Line Estimation Task"
     };
 
     //add welcome message to the experiment
@@ -27,21 +44,18 @@
 
     const hello_trial ={
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'HelloWorld'
+      stimulus: 'You will do some number line estimation tasks. Press any key to continue to the task'
     }
-
-
     //add intructions to experiment
     timeline.push(hello_trial);
 
 
-  var numberline_trial_instructions = {
-    type: jsPsychHtmlKeyboardResponse,
-    //type: jsPsychNumberLine,
-    stimulus: '<p>Sample Instructions</p>',
-    post_trial_gap: 2000
-  };
- timeline.push(numberline_trial_instructions);
+   var numberline_trial = {
+    type: jsPsychNumberLine,
+    stimulus: 'Ah'
+  }; 
+ timeline.push(numberline_trial);
+ 
 
   jsPsych.run(timeline);
 
