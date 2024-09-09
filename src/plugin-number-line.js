@@ -167,6 +167,37 @@ var jsPsychNumberLine = (function (jspsych) {
    */
     }
 
+    trial(display_element, trial) {
+      /*
+      display_element.innerHTML = '<div id="jspsych-html-slider-response-stimulus">' + trial.stimulus + "</div>";
+      // data saving
+      var trial_data = {
+        // what of these do we need?  Add getters for all of these
+        line_start_X: 99,
+        line_start_Y: 99,
+        unit_size: 99,
+        start_label: 99,
+        tick_mark_height: 99, 
+        target_number: 99,
+        target_number_x: 99,
+        target_number_y: 99,
+        boundless_line: 99,
+        number_labels: 99,
+          
+    
+        numberline_value: 99,
+        total_adjust_time: 99,
+        total_adjust_time: 99,
+        total_trial_time: 99, 
+      }
+  */
+
+      const endTrial = () => {
+     
+        this.jsPsych.finishTrial(trial_data);
+    };
+    endTrial();
+  }
     startTrialTimer(){
       this.trial_start_time_ms = Date.now();
   }
@@ -355,40 +386,10 @@ var jsPsychNumberLine = (function (jspsych) {
     text.update();
     text.addDependency(numberline.line);
     //# sourceMappingURL=svg-line.js.map
-}
-
-    trial(display_element, trial) {
-      display_element.innerHTML = 
-      '<div id="jsPsychNumberLine" class="NumberLinePlugin">'
-      "</div>";
-      // data saving
-      var trial_data = {
-        data1: 99, // Make sure this type and name matches the information for data1 in the data object contained within the info const.
-        data2: "hello world!", // Make sure this type and name matches the information for data2 in the data object contained within the info const.
-
-/*  what of these do we need?  Add getters for all of these
-        line_start_X: 99,
-        line_start_Y: 99,
-        unit_size: 99,
-        start_label: 99,
-        tick_mark_height: 99, 
-        target_number: 99,
-        target_number_x: 99,
-        target_number_y: 99,
-        boundless_line: 99,
-        number_labels: 99,
-          
-      data: 
-        numberline_value: 99,
-        total_adjust_time: 99,
-        total_adjust_time: 99,
-        total_trial_time: 99, */
-      }
-    
-      // end trial
-      this.jsPsych.finishTrial(trial_data);
-    }
   }
+
+
+}
   NumberLinePlugin.info = info;
 
   return NumberLinePlugin;
