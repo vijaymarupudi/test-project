@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Number Line Estimation Task</title>
-    <!-- <script src="https://unpkg.com/jspsych@7.3.4"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
-    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" /> -->
     <script src="jspsych/jspsych.js"></script>
     <script src="jspsych/plugin-html-keyboard-response.js"></script> 
     <script type="module" src="/src/plugin-number-line.js"></script>
@@ -13,11 +10,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"> 
   </head>
   <body>
-
     <!-- SCRIPTS -->
     <script type="module" src="/main.js" ></script> 
     <script type="module" src="./dep/dist/examples/math/line-defined-by-two-points.js"></script>
-
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="./dep/css/library.css">
@@ -52,7 +47,6 @@
 
    var numberline_trial = {
     type: jsPsychNumberLine,
-    stimulus: 'Ah'
   }; 
  timeline.push(numberline_trial);
  

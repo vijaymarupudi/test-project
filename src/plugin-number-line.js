@@ -143,9 +143,10 @@ var jsPsychNumberLine = (function (jspsych) {
         //control
         control_point = interactive.control(this.line_start_X + this.line_length, this.line_start_Y);
     
-    constructor(jsPsych, ine_start_X1, line_start_Y1, unit_size1, number_Labels1, boundless_line1, start_label1, end_label1 ) {
+   // constructor(jsPsych, line_start_X1, line_start_Y1, unit_size1, number_Labels1, boundless_line1, start_label1, end_label1 ) {
+     constructor(jsPsych){
       this.jsPsych = jsPsych;
-
+    /*
       this.line_start_X = line_start_X1;
       this.line_start_Y = line_start_Y1;
       this.unit_size = unit_size1;
@@ -163,7 +164,7 @@ var jsPsychNumberLine = (function (jspsych) {
       this.generateTargetNumber();
       this.setTargetNumberLocation(this.target_number_x, this.target_number_y);
       this.setCssClasses();
-   
+   */
     }
 
     startTrialTimer(){
@@ -358,7 +359,7 @@ var jsPsychNumberLine = (function (jspsych) {
 
     trial(display_element, trial) {
       display_element.innerHTML = 
-      '<div id="jsPsychNumberLine" class="jsPsychNumberLine">'
+      '<div id="jsPsychNumberLine" class="NumberLinePlugin">'
       "</div>";
       // data saving
       var trial_data = {
