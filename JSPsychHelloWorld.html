@@ -5,26 +5,27 @@
     <title>Number Line Estimation Task</title>
     <script src="jspsych/jspsych.js"></script>
     <script src="jspsych/plugin-html-keyboard-response.js"></script> 
-    <script type="module" src="/src/plugin-number-line.js"></script>
+    <script type="module" src="src/plugin-number-line.js"></script>
     <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width,initial-scale=1"> 
   </head>
   <body>
     <!-- SCRIPTS -->
-    <script type="module" src="/main.js" ></script> 
-    <script type="module" src="./dep/dist/examples/math/line-defined-by-two-points.js"></script>
+    <!-- <script type="module" src="/main.js" ></script>  -->
+    <!-- <script type="module" src="./dep/dist/examples/math/line-defined-by-two-points.js"></script> -->
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="./dep/css/library.css">
-    <link rel="stylesheet" href="/main.cs" />
+    <!-- <link rel="stylesheet" href="./dep/css/library.css"> -->
+    <!-- <link rel="stylesheet" href="/main.cs" /> -->
 
     <!-- SVG -->
-    <div id="jsPsychNumberLine"></div>
+    <!-- <div id="jsPsychNumberLine"></div> -->
 
     <!-- MATH DIVS -->
-    <div id="line-defined-by-two-points"></div>
+    <!-- <div id="line-defined-by-two-points"></div> -->
   </body>
-  <script>
+  <script type='module'>
+    import { jsPsychNumberLine } from './src/plugin-number-line.js'
     // https://docs.npmjs.com/creating-a-package-json-file json package info
     var jsPsych = initJsPsych();
     var timeline = [];
@@ -44,14 +45,15 @@
     //add intructions to experiment
     timeline.push(hello_trial);
 
-
-   var numberline_trial = {
-    type: jsPsychNumberLine
-  }; 
- timeline.push(numberline_trial);
+    var numberline_trial = {
+      type: jsPsychNumberLine
+    };
+    
+    timeline.push(numberline_trial);
+    timeline.push(hello_trial);
  
 
-  jsPsych.run(timeline);
+    jsPsych.run(timeline);
 
   </script>
 </html>
